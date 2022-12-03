@@ -37,8 +37,8 @@ create_sudoers_file()
     SCRIPT_TEMP_PATH=/tmp
 
     report_status "Creating ${SUDOERS_FILE} ..."
-    sudo rm -f $SCRIPT_TEMP_PATH/$SUDOERS_FILE
-    sudo sed "s/GROUPNAME/$NEW_GROUP/g" > $SCRIPT_TEMP_PATH/$SUDOERS_FILE << '#EOF'
+    echo raspberry | sudo -S rm -f $SCRIPT_TEMP_PATH/$SUDOERS_FILE
+    echo raspberry | sudo -S sed "s/GROUPNAME/$NEW_GROUP/g" > $SCRIPT_TEMP_PATH/$SUDOERS_FILE << '#EOF'
 
 ### Elevate moonraker API rights
 ### Do NOT allow Command Parts only Full Commands
